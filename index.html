@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=1024, user-scalable=no"><!-- Required stylesheets-->
     <link rel="stylesheet" href="core/deck.core.css"><!-- Starter kit custom styles.-->
     <link rel="stylesheet" href="css/slides.custom.css"><!-- Extension CSS files go here. Remove or add as needed.-->
+    <link rel="stylesheet" href="extensions/notes/deck.notes.css">
+    <link rel="stylesheet" href="extensions/presenterview/deck.presenterview.css">
     <link rel="stylesheet" href="extensions/goto/deck.goto.css">
     <link rel="stylesheet" href="extensions/menu/deck.menu.css">
     <link rel="stylesheet" href="extensions/navigation/deck.navigation.css">
@@ -32,8 +34,10 @@
       </section>
 
       <section id="a1" class="slide"> 
-      <h2>Key Topics</h2>
+      <h2>Travis to rework all slides up to angularJS Scope and introduce
+        AngualarJS scope Key Topics</h2>
       <div class="figure ">
+         <!-- Travis: Key Topics:  --> 
         <ul>
           <li>JS Origin</li>
           <li>Prototypal Inheritance</li>
@@ -45,7 +49,7 @@
       </section>
 
 
-      <section Travis id="a1a" class="slide"> 
+      <section id="a1a" class="slide"> 
       <h2>Brendan Eich (Netscape 1995)</h2>
       <div class="figure ">
         <ul>
@@ -56,14 +60,26 @@
             <li>Self (took features)</li>
           </ul></li>
         </ul>
+        <!--
+        Current Screen<br/>
+          Travis: Brendan Eich 
+          <br/>
+          You'll have the
+          tendency to write javascript based on the language you know best.
+          However, inheritance models used my most other languages are not
+          the same as prototypal inheritance. By deeply understanding
+          prototypal inheritance you'll be able to leverage the full power
+          javascript. It's important to write idiomatic javascript. 
+        -->
 
       </div>
 
       </section>
 
-      <section Travis id="a2" class="slide"> 
+      <section id="a2" class="slide"> 
       <h2>Classical vs Prototypal Inheritance</h2>
       <div class="figure ">
+        <!-- Travis -->
         <table class="tableOW">
           <tbody>
             <tr>
@@ -93,10 +109,10 @@
 
 
 
-      <section Travis id="c" class="slide"> 
+      <section id="c" class="slide"> 
       <h2>Classical vs Prototypal Inheritance cont.</h2>
       <div class="figure ">
-
+        <!-- Travis -->
         <p>
         ...I now see my early attempts to support the classical model in JavaScript as a mistake.
         </p>
@@ -105,50 +121,54 @@
 
       </section>
 
-      <section Travis id="b" class="slide"> 
+      <section id="b" class="slide"> 
+        <!-- Travis -->
       <h2>Prototypal Inheritance: 6 year old</h2>
       <p>
       <img height="350px" src="piggyback.jpg"/>
-      Prototypal inheritance is like a son carrying his father on his back
-      everywhere he goes. If someone asks the son, "what color are your
-      shoes?" He would respond with his shoe color, unless he is barefoot,
-      then he'd respond with his dads shoe color.
-      </p>
-      <p>With Classical you'd only have a template person (interface or abstract class) and not a real dad</p>
+      <div class="notes">
+        Prototypal inheritance is like a son carrying his father on his back
+        everywhere he goes. If someone asks the son, "what color are your
+        shoes?" He would respond with his shoe color, unless he is barefoot,
+        then he'd respond with his dads shoe color.
+        </p>
+        <p>With Classical you'd only have a template person (interface or abstract class) and not a real dad</p>
+      </div>
       <a target="_blank" href="http://goo.gl/E3qWso">stackoverflow</a>
 
       </section>
 
-      <section Travis id="d" class="slide"> 
+      <section id="d" class="slide"> 
+        <!-- Travis -->
       <h2>Prototypal Inheritance</h2>
       <p>
       <pre>
-      var parent = {
+      var scott = {
         teeth: 42,
         stitches: 10
       };
 
       // create two new child objects
-      var noah = Object.create(parent);
+      var noah = Object.create(scott);
 
       noah.stitches = 22;
 
-      // parent can be changed at any time
-      parent.brokenbones = 2;
+      // at anytime parent can get a new property 
+      // and it is reflected in the children
+      scott.brokenbones = 2;
 
       console.log(noah.brokenbones); //==> 2
 
       // Pop Quiz:
       console.log(noah.teeth);// ==><span class="popquiz">42</span>
-      parent.teeth = 5;
+      scott.teeth = 5;
       console.log(noah.teeth);// ==><span class="popquiz">5</span>
       noah.teeth = 100;
-      parent.teeth = 5;
       console.log(noah.teeth);// ==><span class="popquiz">100</span>
     </pre>
       </p>
       </section>
-      <section Scott id="e" class="slide">
+      <section id="e" class="slide">
       <h2>Prototypal Inheritance</h2>
       <p>
       Demo <a target="_blank" href="http://jsfiddle.net/ssoward/rVbWT/">JSFiddle</a> 
@@ -157,20 +177,34 @@
         <p>
         In JavaScript there are 5 primitive types: undefined, null,
         boolean, string and number. 
-        This issue with primitives can be easily avoided by following the
-        best practice
-        <a target="_blank" href="http://www.youtube.com/watch?v=ZhfUv0spHCY&feature=youtu.be&t=30m">of always have a '.'</a> in your ng-models.
+        Bi-directional linking can be maintained by sticking to the rule:
+        <a target="_blank" href="http://www.youtube.com/watch?v=ZhfUv0spHCY&feature=youtu.be&t=30m">always having a '.'</a> in your ng-models.
+        <!-- Scott Prototypal Inheritance<br/>
+          Scope inheritance is normally straightforward, and you often don't
+          even need to know it is happening... until you try 2-way data
+          binding (i.e., form elements, ng-model) to a primitive (e.g.,
+          number, string, boolean) defined on the parent scope from inside
+          the child scope. It doesn't work the way most people expect it
+          should work. What happens is that the child scope gets its own
+          property that hides/shadows the parent property of the same name.
+          This is not something AngularJS is doing – this is how JavaScript
+          prototypal inheritance works. New AngularJS developers often do
+          not realize that ng-repeat, ng-switch, ng-view and ng-include all
+          create new child scopes, so the problem often shows up when these
+          directives are involved. (See this example for a quick
+          illustration of the problem.)
+          -->
         </p>
 
       </section>
       <section Scott id="f" class="slide"> 
-       <h2>AngularJS Scope</h2>
+       <h2>Scott to rework directives AngularJS Scope</h2>
       <div class="figure ">
         <p>
         <h4>Creates new scope and inherit prototypically</h4>
         <ul>
-          <li>ng-include</li>
           <li>ng-repeat</li>
+          <li>ng-include</li>
           <li>ng-switch</li>
           <li>ng-view</li>
           <li>ng-controller</li>
@@ -186,15 +220,17 @@
 
 
       </section>
+
+      <section Scott id="h" class="slide"> 
+       <h2>ng-repeat</h2>
+        <p> Demo <a target="_blank" href="http://jsfiddle.net/ssoward/kCGs8/">JSFiddle</a> </p>
+      </section>
+
       <section Scott id="g" class="slide"> 
        <h2>ng-include</h2>
         <p> Demo <a target="_blank" href="http://jsfiddle.net/ssoward/nwuqj/">JSFiddle</a> </p>
       </section>
 
-      <section Travis id="h" class="slide"> 
-       <h2>ng-repeat</h2>
-        <p> Demo <a target="_blank" href="http://jsfiddle.net/ssoward/kCGs8/">JSFiddle</a> </p>
-      </section>
       <section Travis id="i" class="slide"> 
         <h2>ng-controller</h2>
         <p>
@@ -393,6 +429,13 @@
     <script src="extensions/status/deck.status.js"></script>
     <script src="extensions/navigation/deck.navigation.js"></script>
     <script src="extensions/scale/deck.scale.js"></script>
+    <script src="extensions/clone/deck.clone.js"></script>
+    <script src="extensions/presenterview/deck.presenterview.js"></script>
+    <script src="extensions/hash/deck.hash.js"></script>
+    <!--
+    <script src="extensions/notes/deck.notes.js"></script>
+    <script src="extensions/notes/deck.scottsNotes.js"></script>
+    -->
     <!-- Initialize the deck.-->
     <script>$(function() {
       $.deck('.slide', {
