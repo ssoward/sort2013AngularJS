@@ -74,9 +74,3 @@ Included libraries:
 [cm]: https://github.com/iros/deck.js-codemirror
 [cs]: http://coffeescript.org/
 [mnml]: https://github.com/duijf/mnml
-=======
-sort2013AngularJS
-=================
-
-AngularJS Demo
->>>>>>> master
