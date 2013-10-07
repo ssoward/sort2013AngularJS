@@ -198,13 +198,13 @@
 
       </section>
       <section Scott id="f" class="slide"> 
-       <h2>Scott to rework directives AngularJS Scope</h2>
+       <h2>AngularJS Directive Scope</h2>
       <div class="figure ">
         <p>
-        <h4>Creates new scope and inherit prototypically</h4>
+        <h4>Creates new scope and inherit <a target="blank" href="./angularJSDemos/angular-seed/app/index.html">prototypically</a></h4>
         <ul>
-          <li>ng-repeat</li>
-          <li>ng-include</li>
+          <li> <a target="_blank" href="http://jsfiddle.net/ssoward/kCGs8/">ng-repeat</a> </li>
+          <li> <a target="_blank" href="http://jsfiddle.net/ssoward/nwuqj/">ng-include</a> </li>
           <li>ng-switch</li>
           <li>ng-view</li>
           <li>ng-controller</li>
@@ -219,16 +219,6 @@
       </div>
 
 
-      </section>
-
-      <section Scott id="h" class="slide"> 
-       <h2>ng-repeat</h2>
-        <p> Demo <a target="_blank" href="http://jsfiddle.net/ssoward/kCGs8/">JSFiddle</a> </p>
-      </section>
-
-      <section Scott id="g" class="slide"> 
-       <h2>ng-include</h2>
-        <p> Demo <a target="_blank" href="http://jsfiddle.net/ssoward/nwuqj/">JSFiddle</a> </p>
       </section>
 
       <section Travis id="i" class="slide"> 
@@ -258,12 +248,7 @@
  
         <p>
         scope: true - the directive creates a new child scope that
-        prototypically inherits from the parent scope. If more than one
-        directive (on the same DOM element) requests a new scope, only one
-        new child scope is created. Since we have "normal" prototypal
-        inheritance, this is like ng-include and ng-switch, so be wary of
-        2-way data binding to parent scope primitives, and child scope
-        hiding/shadowing of parent scope properties.
+        prototypically inherits from the parent scope.
         </p>
       </section>
       <section Scott id="l" class="slide"> 

@@ -28,15 +28,22 @@
   content: "";
   padding: 0;
 }
-html {
-  padding: 40px;
+body {
+  padding-left: 40px;
+  padding-bottom: 10px;
   border: 1px solid;
   border-radius: 15px;
-  width: 30%;
+  width: 55%;
+  padding-right: 40px;
+  font-family: fantasy;
 }
 .directive{
   border: 1px solid blue;
+  font-size: 35px;
   border-radius: 15px;
   height: 50px;
   padding: 14px;
+}
+span{
+  padding-left: 40px;
 }

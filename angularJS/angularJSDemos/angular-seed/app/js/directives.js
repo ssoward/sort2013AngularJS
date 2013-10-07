@@ -13,11 +13,18 @@ angular.module('myApp.directives', []).
 
             transclude: false,
 
-            scope:'isolate',
-            //scope:{ title: '@myTitle' },
+
+            //scope:true,                  // inherits prototypically 
+            //scope:false,                 // DEFAULT: does not inherit prototypically 
+            //scope:'isolate',
+            //scope:{ title: '=myTitle' }, // set up two-way binding (using '=') 
+            //scope:{ title: '@myTitle' }, // one-way binding (using '@')  
+            //skip: scope:{ title: '&myTitle' }, // bind to parent scope expressions
+                                           
+                                          
 
             template:'<div class="directive">' +
-                '<input ng-model="title"/>{{title}}' +
+                '<input ng-model="title"/><span>{{title}}</span>' +
                 '</div>',
 
             // the linking function adds behavior to the template
