@@ -9,14 +9,15 @@ angular.module('myApp.directives', []).
         return {
             restrict: 'EACM', //element, attribute, class, comments
 
-            replace: true,
+            replace: false, //true: the template will replace the current element.
+                           //false: the template will replace the contents of the current element
 
             transclude: false,
 
 
-            //scope:true,                  // inherits prototypically 
             //scope:false,                 // DEFAULT: does not inherit prototypically 
-            //scope:'isolate',
+            //scope:true,                  // inherits prototypically 
+            //scope:'isolate',             // does not inherit prototypically 
             //scope:{ title: '=myTitle' }, // set up two-way binding (using '=') 
             //scope:{ title: '@myTitle' }, // one-way binding (using '@')  
             //skip: scope:{ title: '&myTitle' }, // bind to parent scope expressions
