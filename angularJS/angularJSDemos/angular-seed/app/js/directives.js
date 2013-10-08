@@ -5,40 +5,39 @@
 
 angular.module('myApp.directives', []).
   directive('myDirective', function () {
-        console.log('creating');
-        return {
-            restrict: 'EACM', //element, attribute, class, comments
+    console.log('creating');
+    return {
+      //Attribues:
+      restrict: 'EACM', //element, attribute, class, comments
 
-            replace: false, //true: the template will replace the current element.
-                           //false: the template will replace the contents of the current element
+      replace: false, //true: the template will replace the current element.
+                      //false: the template will replace the contents of the current element
 
-            transclude: false,
+      transclude: true,
 
+      //WHICH SCOPE TO USE
+      //scope:false,                   // DEFAULT: does not inherit prototypically 
+      //scope:true,                    // inherits prototypically 
+      //scope:'isolate',               // does not inherit prototypically 
+      //scope:{ title: '=myTitle' },   // set up two-way binding (using '=') 
+      
+      //update index with {{title}}
+      //  scope:{ title: '@myTitle' }, // one-way binding (using '@')  
+      //scope:{ title: '&myTitle' },   // execute an expression in the context of the parent scope
 
-            //scope:false,                 // DEFAULT: does not inherit prototypically 
-            //scope:true,                  // inherits prototypically 
-            //scope:'isolate',             // does not inherit prototypically 
-            //scope:{ title: '=myTitle' }, // set up two-way binding (using '=') 
-            //scope:{ title: '@myTitle' }, // one-way binding (using '@')  
-            //skip: scope:{ title: '&myTitle' }, // bind to parent scope expressions
-                                           
-                                          
+      template:'<div class="directive">' +
+        '<input ng-model="title"/><span>{{title}}</span>' +
+        '</div>',
 
-            template:'<div class="directive">' +
-                '<input ng-model="title"/><span>{{title}}</span>' +
-                '</div>',
+      // the linking function adds behavior to the template
+      link:function (scope, element, attrs) { 
+        console.log('hello world in directive: ' + attrs);
 
-            // the linking function adds behavior to the template
-            link:function (scope, element, attrs) {
-
-                console.log('hello world in directive: ' + attrs);
-
-
-                // back button
-                //var back = angular.element(element.children()[0]);
-                //back.bind('click', function() {
-                //    window.back();
-                //});
-            }
-        }
-    });
+        // back button
+        //var back = angular.element(element.children()[0]);
+        //back.bind('click', function() {
+        //    window.back();
+        //});
+      }
+  }
+});

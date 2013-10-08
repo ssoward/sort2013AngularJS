@@ -199,6 +199,48 @@
       </section>
       <section Scott id="f" class="slide"> 
        <h2>AngularJS Directive Scope</h2>
+       <!-- Scott
+       <div class="wideCol"
+       <pre width="500px">
+       default (scope: false) - the directive does not create a new scope,
+       so there is no inheritance here. This is easy, but also dangerous
+       because, e.g., a directive might think it is creating a new property
+       on the scope, when in fact it is clobbering an existing property.
+       This is not a good choice for writing directives that are intended as
+       reusable components.
+       </pre>
+       
+       <p>
+       scope: true - the directive creates a new child scope that
+       prototypically inherits from the parent scope. If more than one
+       directive (on the same DOM element) requests a new scope, only one
+       new child scope is created. Since we have "normal" prototypal
+       inheritance, this is like ng-include and ng-switch, so be wary of
+       2-way data binding to parent scope primitives, and child scope
+       hiding/shadowing of parent scope properties.
+      
+       </p><p>
+       scope: { ... } - the directive creates a new isolate/isolated scope.
+       It does not prototypically inherit. This is usually your best choice
+       when creating reusable components, since the directive cannot
+       accidentally read or modify the parent scope. However, such
+       directives often need access to a few parent scope properties. The
+       object hash is used to set up two-way binding (using '=') or one-way
+       binding (using '@') between the parent scope and the isolate scope.
+       There is also '&' to bind to parent scope expressions. So, these all
+       create local scope properties that are derived from the parent scope.
+
+       </p><p>
+       transclude: true - the directive creates a new "transcluded" child
+       scope, which prototypically inherits from the parent scope. So if
+       your transcluded content (i.e., the stuff that ng-transclude will be
+       replaced with) requires 2-way data binding to a primitive in the
+       parent scope, use $parent, or change the model to be an object and
+       then bind to a property of that object. This will avoid child scope
+       hiding/shadowing of parent scope properties.
+       </p>
+     </div>
+       -->
       <div class="figure ">
         <p>
         <h4>Creates new scope and inherit <a target="blank" href="./angularJSDemos/angular-seed/app/index.html">prototypically</a></h4>
@@ -233,68 +275,24 @@
       
       </section>
       <section Scott id="j" class="slide"> 
-        <h2>directives</h2>
-        <p>
-        default (scope: false) - the directive does not create a new scope,
-        so there is no inheritance here. This is easy, but also dangerous
-        because, e.g., a directive might think it is creating a new property
-        on the scope, when in fact it is clobbering an existing property.
-        This is not a good choice for writing directives that are intended
-        as reusable components.
-        </p>
-      </section>
-      <section Scott id="k" class="slide"> 
-        <h2>directives cont.</h2>
- 
-        <p>
-        scope: true - the directive creates a new child scope that
-        prototypically inherits from the parent scope.
-        </p>
-      </section>
-      <section Scott id="l" class="slide"> 
-        <h2>directives cont.</h2>
- 
-        <p>
+      <h2>Review</h2>
+      <h4>Two-way binding</h4>
+      <ul>
+        <li>
+        define objects in the parent for your model, then reference a
+        property of that object in the child: parentObj.someProp
+        </li>
 
-        scope: { ... } - the directive creates a new isolate/isolated scope.
-        It does not prototypically inherit. This is usually your best choice
-        when creating reusable components, since the directive cannot
-        accidentally read or modify the parent scope. However, such
-        directives often need access to a few parent scope properties. The
-        object hash is used to set up two-way binding (using '=') or one-way
-        binding (using '@') between the parent scope and the isolate scope.
-        There is also '&' to bind to parent scope expressions. So, these all
-        create local scope properties that are derived from the parent
-        scope. Note that attributes are used to help set up the binding --
-        you can't just reference parent scope property names in the object
-        hash, you have to use an attribute. E.g., this won't work if you
-        want to bind to parent property parentProp in the isolated scope:
-        <div my-directive> and scope: { localProp: '@parentProp' }. An
-          attribute must be used to specify each parent property that the
-          directive wants to bind to: <div my-directive
-            the-Parent-Prop=parentProp> and scope: { localProp:
-            '@theParentProp' }. 
-            Isolate scope's __proto__ references a Scope object. Isolate scope's $parent references the
-            parent scope, so although it is isolated and doesn't inherit
-            prototypically from the parent scope, it is still a child scope. 
-            </p>
-      </section>
-      <section Scott id="m" class="slide"> 
-        <h2>directives cont.</h2>
-      <p>
+        <li>
+        use $parent.parentScopeProperty (not always possible, but easier
+        than 1. where possible)
+        </li>
+        <li>
+        define a function on the parent scope, and call it from the child
+        (not always possible)
+        </li>
+      </ul>
 
-      transclude: true - the directive creates a new "transcluded" child
-      scope, which prototypically inherits from the parent scope. So if your
-      transcluded content (i.e., the stuff that ng-transclude will be
-      replaced with) requires 2-way data binding to a primitive in the
-      parent scope, use $parent, or change the model to be an object and
-      then bind to a property of that object. This will avoid child scope
-      hiding/shadowing of parent scope properties.
-      The transcluded and the isolated scope (if any) are siblings -- the
-      $parent property of each scope references the same parent scope. When
-      a transcluded and an isolate scope both exist, isolate scope property
-      $$nextSibling will reference the transcluded scope.
-      </p>
       </section>
       <section Travis Scott id="n" class="slide"> 
         <h2>AngularJS Take Aways</h2>
@@ -353,8 +351,9 @@
         
       </section>
       <section id="p" class="slide"> 
-      <h3>That's fantastic! Go. Go away! Write some Angular!</h3>
+      <h3>That's fantastic!</h3>
       <img src="nacho.jpg"/>
+      <h3>Go. Go away! Write some Angular!</h3>
       </section>
 
       <section id="q" class="slide"> 
