@@ -1,5 +1,5 @@
 <!DOCTYPE html><!--[if lt IE 7]><html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"></html><![endif]--><!--[if IE 7]><html lang="en" class="no-js lt-ie9 lt-ie8"></html><![endif]--><!--[if IE 8]><html lang="en" class="no-js lt-ie9"></html><![endif]--><!--[if gt IE 8]><!-->
-<html lang="en" class="no-js"><!--<![endif]-->
+<html lang="en" class="no-js" xmlns="http://www.w3.org/1999/html"><!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -197,59 +197,43 @@
 
 </section>
 <section Scott id="f" class="slide">
-    <h2>AngularJS Directive Scope</h2>
+    <h2>AngularJS Scope</h2>
     <!-- Scott
-    <div class="wideCol"
-    <pre width="500px">
-    default (scope: false) - the directive does not create a new scope,
-    so there is no inheritance here. This is easy, but also dangerous
-    because, e.g., a directive might think it is creating a new property
-    on the scope, when in fact it is clobbering an existing property.
-    This is not a good choice for writing directives that are intended as
-    reusable components.
-    </pre>
+    <br/>For the sake or this presentation:
+    <br/>It is just an OBJECT and adheres to the prototypical JS inheritance:  inherits properties from its parent scope
+    -->
+    <div class="figure ">
+        <p>
+        <h4>What is Scope</h4>
+             <ul>
+                 <li>An object that refers to the application model</li>
+                 <li>An execution context for expressions</li>
+                 <li>Are arranged in hierarchical structure</li>
+                 <li>Provide APIs to observe model mutations</li>
+                 <li>Provide APIs to propagate any model changes</li>
+                 <li>Provide context against which expressions are evaluated</li>
+                 <li>It is the glue between application controller and the view</li>
+             </ul>
+        </p>
+    </div>
 
-    <p>
-    scope: true - the directive creates a new child scope that
-    prototypically inherits from the parent scope. If more than one
-    directive (on the same DOM element) requests a new scope, only one
-    new child scope is created. Since we have "normal" prototypal
-    inheritance, this is like ng-include and ng-switch, so be wary of
-    2-way data binding to parent scope primitives, and child scope
-    hiding/shadowing of parent scope properties.
 
-    </p><p>
-    scope: { ... } - the directive creates a new isolate/isolated scope.
-    It does not prototypically inherit. This is usually your best choice
-    when creating reusable components, since the directive cannot
-    accidentally read or modify the parent scope. However, such
-    directives often need access to a few parent scope properties. The
-    object hash is used to set up two-way binding (using '=') or one-way
-    binding (using '@') between the parent scope and the isolate scope.
-    There is also '&' to bind to parent scope expressions. So, these all
-    create local scope properties that are derived from the parent scope.
-
-    </p><p>
-    transclude: true - the directive creates a new "transcluded" child
-    scope, which prototypically inherits from the parent scope. So if
-    your transcluded content (i.e., the stuff that ng-transclude will be
-    replaced with) requires 2-way data binding to a primitive in the
-    parent scope, use $parent, or change the model to be an object and
-    then bind to a property of that object. This will avoid child scope
-    hiding/shadowing of parent scope properties.
-    </p>
-  </div>
+</section>
+<section Scott id="fa" class="slide">
+    <h2>Prototypal Inheritance in AngularJS</h2>
+    <!-- Scott
+    <br/>scope is an object that refers to the application model. It is an execution context for expressions. Scopes are arranged in hierarchical structure which mimic the DOM structure of the application. Scopes can watch expressions and propagate events.
     -->
     <div class="figure ">
         <p>
         <h4>Creates new scope and inherit prototypically</h4>
         <ul>
-            <li> <a target="_blank" href="http://jsfiddle.net/ssoward/kCGs8/">ng-repeat</a> </li>
-            <li> <a target="_blank" href="http://jsfiddle.net/ssoward/nwuqj/">ng-include</a> </li>
+            <li>ng-repeat </li>
+            <li>ng-include </li>
             <li>ng-switch</li>
             <li>ng-view</li>
             <li>ng-controller</li>
-            <li><a target="blank" href="./angularJSDemos/angular-seed/app/index.html">directive with scope: true</a></li>
+            <li>directive with scope: true</li>
             <li>directive with transclude: true</li>
         </ul>
         <h4>New scope but does NOT inherit prototypically</h4>
@@ -262,6 +246,77 @@
 
 </section>
 
+<section id="ja" class="slide">
+    <h2>ng-repeat</h2>
+    <!-- Scott
+     <p>For each item/iteration, ng-repeat creates a new scope, which prototypically inherits from the parent scope, but it also assigns the item's value to a new property on the new child scope.
+    </p><br/>
+    <p>If item is a primitive (as in myArrayOfPrimitives), essentially a copy of the value is assigned to the new child scope property. Changing the child scope property's value does not change the array the parent scope references.
+    </p>
+    -->
+    <a target="_blank" href="http://jsfiddle.net/ssoward/kCGs8/">ng-repeat</a>
+</section>
+
+<section id="jb" class="slide">
+    <h2>ng-include</h2>
+    <!-- Scott
+    <p>
+        Notice: binding exists on primitives only from parent to child, when
+        the child scope is consulted, it create a new property with the same name (myPrimitive).
+        What happens is that the child scope gets its own property
+        that hides/shadows
+        the parent property of the same name.
+    </p>
+    -->
+    <a target="_blank" href="http://jsfiddle.net/ssoward/kCGs8/">ng-repeat</a>
+</section>
+
+<section id="jc" class="slide">
+    <h2>directives</h2>
+    <!-- Scott
+        <div class="wideCol"
+        <pre width="500px">
+        default (scope: false) - the directive does not create a new scope,
+        so there is no inheritance here. This is easy, but also dangerous
+        because, e.g., a directive might think it is creating a new property
+        on the scope, when in fact it is clobbering an existing property.
+        This is not a good choice for writing directives that are intended as
+        reusable components.
+        </pre>
+
+        <p>
+        scope: true - the directive creates a new child scope that
+        prototypically inherits from the parent scope. If more than one
+        directive (on the same DOM element) requests a new scope, only one
+        new child scope is created. Since we have "normal" prototypal
+        inheritance, this is like ng-include and ng-switch, so be wary of
+        2-way data binding to parent scope primitives, and child scope
+        hiding/shadowing of parent scope properties.
+
+        </p><p>
+        scope: { ... } - the directive creates a new isolate/isolated scope.
+        It does not prototypically inherit. This is usually your best choice
+        when creating reusable components, since the directive cannot
+        accidentally read or modify the parent scope. However, such
+        directives often need access to a few parent scope properties. The
+        object hash is used to set up two-way binding (using '=') or one-way
+        binding (using '@') between the parent scope and the isolate scope.
+        There is also '&' to bind to parent scope expressions. So, these all
+        create local scope properties that are derived from the parent scope.
+
+        </p><p>
+        transclude: true - the directive creates a new "transcluded" child
+        scope, which prototypically inherits from the parent scope. So if
+        your transcluded content (i.e., the stuff that ng-transclude will be
+        replaced with) requires 2-way data binding to a primitive in the
+        parent scope, use $parent, or change the model to be an object and
+        then bind to a property of that object. This will avoid child scope
+        hiding/shadowing of parent scope properties.
+        </p>
+      </div>
+        -->
+    <a target="blank" href="./angularJSDemos/angular-seed/app/index.html">Directives</a>
+</section>
 <section Travis id="i" class="slide">
     <h2>ng-controller</h2>
     <p>
