@@ -1,6 +1,6 @@
 <!DOCTYPE html><!--[if lt IE 7]><html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"></html><![endif]--><!--[if IE 7]><html lang="en" class="no-js lt-ie9 lt-ie8"></html><![endif]--><!--[if IE 8]><html lang="en" class="no-js lt-ie9"></html><![endif]--><!--[if gt IE 8]><!-->
 <html lang="en" class="no-js"><!--<![endif]-->
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>AngularJS</title>
@@ -21,127 +21,126 @@
     <link rel="stylesheet" href="plugins/codemirror/themes/elegant.css"><!-- Modernizr.-->
     <script src="js/vendor/modernizr.custom.js"></script>
     <style>
-      .popquiz{
-        color: #111;
-      }
+        .popquiz{
+            color: #111;
+        }
     </style>
-  </head>
-  <body class="body">
-    <div class="deck-container">
-      <section id="a" class="slide">
-      <h1><img width="500px" src="./angularjs.png"/>
+</head>
+<body class="body">
+<div class="deck-container">
+<section id="a" class="slide">
+    <h1><img width="500px" src="./angularjs.png"/>
         <div class="subtitle">The Scoop on Scope</div></h1>
-      </section>
+</section>
 
-      <section id="a1" class="slide"> 
-      <h2>Travis to rework all slides up to angularJS Scope and introduce
+<section id="a1" class="slide">
+    <h2>Travis to rework all slides up to angularJS Scope and introduce
         AngualarJS scope Key Topics</h2>
-      <div class="figure ">
-         <!-- Travis: Key Topics:  --> 
+    <div class="figure ">
+        <!-- Travis: Key Topics:  -->
         <ul>
-          <li>JS Origin</li>
-          <li>Prototypal Inheritance</li>
-          <li>AngularJS Scope</li>
+            <li>JS Origin</li>
+            <li>Prototypal Inheritance</li>
+            <li>AngularJS Scope</li>
         </ul>
 
-      </div>
+    </div>
 
-      </section>
+</section>
 
 
-      <section id="a1a" class="slide"> 
-      <h2>Brendan Eich (Netscape 1995)</h2>
-      <div class="figure ">
+<section id="a1a" class="slide">
+    <h2>Brendan Eich (Netscape 1995)</h2>
+    <div class="figure ">
         <ul>
-          <li>LiveScript-->JavaScript (ECMAScript)</li>
-          <li><ul>
-            <li>Java (needed to look like Java)</li>
-            <li>Scheme (took features)</li>
-            <li>Self (took features)</li>
-          </ul></li>
+            <li>LiveScript-->JavaScript (ECMAScript)</li>
+            <li><ul>
+                <li>Java (needed to look like Java)</li>
+                <li>Scheme (took features)</li>
+                <li>Self (took features)</li>
+            </ul></li>
         </ul>
         <!--
         Current Screen<br/>
-          Travis: Brendan Eich 
+          Travis: Brendan Eich
           <br/>
           You'll have the
           tendency to write javascript based on the language you know best.
           However, inheritance models used my most other languages are not
           the same as prototypal inheritance. By deeply understanding
           prototypal inheritance you'll be able to leverage the full power
-          javascript. It's important to write idiomatic javascript. 
+          javascript. It's important to write idiomatic javascript.
         -->
 
-      </div>
+    </div>
 
-      </section>
+</section>
 
-      <section id="a2" class="slide"> 
-      <h2>Classical vs Prototypal Inheritance</h2>
-      <div class="figure ">
+<section id="a2" class="slide">
+    <h2>Classical vs Prototypal Inheritance</h2>
+    <div class="figure ">
         <!-- Travis -->
         <table class="tableOW">
-          <tbody>
+            <tbody>
             <tr>
-              <th>Classical Inheritance (Java)</th>
-              <th>Prototypal Inheritance (JavaScript)</th>
+                <th>Classical Inheritance (Java)</th>
+                <th>Prototypal Inheritance (JavaScript)</th>
             </tr>
             <tr>
-              <td>Class and instances of class: Classes are immutable. You can't modify or add new methods to them at runtime.</td>
-              <td>Prototypes are flexible.  They may be either mutable or immutable.</td>
+                <td>Class and instances of class: Classes are immutable. You can't modify or add new methods to them at runtime.</td>
+                <td>Prototypes are flexible.  They may be either mutable or immutable.</td>
             </tr>
             <tr>
-              <td>Classes may or may not support multiple inheritance.</td>
-              <td>Objects can inherit from multiple prototypes.</td>
+                <td>Classes may or may not support multiple inheritance.</td>
+                <td>Objects can inherit from multiple prototypes.</td>
             </tr>
             <tr>
-              <td>It's verbose and complicated.  You have abstract classes, final classes, interfaces, etc.</td>
-              <td>It's simple.  You only have objects and extending objects is the only operation required.</td>
+                <td>It's verbose and complicated.  You have abstract classes, final classes, interfaces, etc.</td>
+                <td>It's simple.  You only have objects and extending objects is the only operation required.</td>
             </tr>
-          </tbody>
+            </tbody>
         </table>
 
-      </div>
+    </div>
 
-        <a
-          href="http://aaditmshah.github.io/why-prototypal-inheritance-matters/">Aadit M Shah</a>
-      </section>
-
+    <a href="http://aaditmshah.github.io/why-prototypal-inheritance-matters/">Aadit M Shah</a>
+</section>
 
 
-      <section id="c" class="slide"> 
-      <h2>Classical vs Prototypal Inheritance cont.</h2>
-      <div class="figure ">
+
+<section id="c" class="slide">
+    <h2>Classical vs Prototypal Inheritance cont.</h2>
+    <div class="figure ">
         <!-- Travis -->
         <p>
-        ...I now see my early attempts to support the classical model in JavaScript as a mistake.
+            ...I now see my early attempts to support the classical model in JavaScript as a mistake.
         </p>
         <a target="_blank" href="http://javascript.crockford.com/inheritance.html">Douglas Crockford</a>
-      </div>
+    </div>
 
-      </section>
+</section>
 
-      <section id="b" class="slide"> 
-        <!-- Travis -->
-      <h2>Prototypal Inheritance: 6 year old</h2>
-      <p>
-      <img height="350px" src="piggyback.jpg"/>
-      <div class="notes">
+<section id="b" class="slide">
+    <!-- Travis -->
+    <h2>Prototypal Inheritance: 6 year old</h2>
+    <p>
+        <img height="350px" src="piggyback.jpg"/>
+    <div class="notes">
         Prototypal inheritance is like a son carrying his father on his back
         everywhere he goes. If someone asks the son, "what color are your
         shoes?" He would respond with his shoe color, unless he is barefoot,
         then he'd respond with his dads shoe color.
-        </p>
-        <p>With Classical you'd only have a template person (interface or abstract class) and not a real dad</p>
-      </div>
-      <a target="_blank" href="http://goo.gl/E3qWso">stackoverflow</a>
+    </div>
+    </p>
+    <p>With Classical you'd only have a template person (interface or abstract class) and not a real dad</p>
+    <a target="_blank" href="http://goo.gl/E3qWso">stackoverflow</a>
 
-      </section>
+</section>
 
-      <section id="d" class="slide"> 
-        <!-- Travis -->
-      <h2>Prototypal Inheritance</h2>
-      <p>
+<section id="d" class="slide">
+    <!-- Travis -->
+    <h2>Prototypal Inheritance</h2>
+    <p>
       <pre>
       var scott = {
         teeth: 42,
@@ -166,20 +165,21 @@
       noah.teeth = 100;
       console.log(noah.teeth);// ==><span class="popquiz">100</span>
     </pre>
-      </p>
-      </section>
-      <section id="e" class="slide">
-      <h2>Prototypal Inheritance</h2>
-      <p>
-      Demo <a target="_blank" href="http://jsfiddle.net/ssoward/rVbWT/">JSFiddle</a> 
-      </p>
+    </p>
+</section>
+<section id="e" class="slide">
+    <h2>Prototypal Inheritance</h2>
+    <p>
+        Demo <a target="_blank" href="http://jsfiddle.net/ssoward/rVbWT/">JSFiddle</a>
+    </p>
 
-        <p>
+    <p>
         In JavaScript there are 5 primitive types: undefined, null,
-        boolean, string and number. 
+        boolean, string and number.
         Bi-directional linking can be maintained by sticking to the rule:
         <a target="_blank" href="http://www.youtube.com/watch?v=ZhfUv0spHCY&feature=youtu.be&t=30m">always having a '.'</a> in your ng-models.
-        <!-- Scott Prototypal Inheritance<br/>
+        <!-- Scott
+          Prototypal Inheritance<br/>
           Scope inheritance is normally straightforward, and you often don't
           even need to know it is happening... until you try 2-way data
           binding (i.e., form elements, ng-model) to a primitive (e.g.,
@@ -191,189 +191,184 @@
           prototypal inheritance works. New AngularJS developers often do
           not realize that ng-repeat, ng-switch, ng-view and ng-include all
           create new child scopes, so the problem often shows up when these
-          directives are involved. (See this example for a quick
-          illustration of the problem.)
+          directives are involved.
           -->
-        </p>
+    </p>
 
-      </section>
-      <section Scott id="f" class="slide"> 
-       <h2>AngularJS Directive Scope</h2>
-       <!-- Scott
-       <div class="wideCol"
-       <pre width="500px">
-       default (scope: false) - the directive does not create a new scope,
-       so there is no inheritance here. This is easy, but also dangerous
-       because, e.g., a directive might think it is creating a new property
-       on the scope, when in fact it is clobbering an existing property.
-       This is not a good choice for writing directives that are intended as
-       reusable components.
-       </pre>
-       
-       <p>
-       scope: true - the directive creates a new child scope that
-       prototypically inherits from the parent scope. If more than one
-       directive (on the same DOM element) requests a new scope, only one
-       new child scope is created. Since we have "normal" prototypal
-       inheritance, this is like ng-include and ng-switch, so be wary of
-       2-way data binding to parent scope primitives, and child scope
-       hiding/shadowing of parent scope properties.
-      
-       </p><p>
-       scope: { ... } - the directive creates a new isolate/isolated scope.
-       It does not prototypically inherit. This is usually your best choice
-       when creating reusable components, since the directive cannot
-       accidentally read or modify the parent scope. However, such
-       directives often need access to a few parent scope properties. The
-       object hash is used to set up two-way binding (using '=') or one-way
-       binding (using '@') between the parent scope and the isolate scope.
-       There is also '&' to bind to parent scope expressions. So, these all
-       create local scope properties that are derived from the parent scope.
+</section>
+<section Scott id="f" class="slide">
+    <h2>AngularJS Directive Scope</h2>
+    <!-- Scott
+    <div class="wideCol"
+    <pre width="500px">
+    default (scope: false) - the directive does not create a new scope,
+    so there is no inheritance here. This is easy, but also dangerous
+    because, e.g., a directive might think it is creating a new property
+    on the scope, when in fact it is clobbering an existing property.
+    This is not a good choice for writing directives that are intended as
+    reusable components.
+    </pre>
 
-       </p><p>
-       transclude: true - the directive creates a new "transcluded" child
-       scope, which prototypically inherits from the parent scope. So if
-       your transcluded content (i.e., the stuff that ng-transclude will be
-       replaced with) requires 2-way data binding to a primitive in the
-       parent scope, use $parent, or change the model to be an object and
-       then bind to a property of that object. This will avoid child scope
-       hiding/shadowing of parent scope properties.
-       </p>
-     </div>
-       -->
-      <div class="figure ">
+    <p>
+    scope: true - the directive creates a new child scope that
+    prototypically inherits from the parent scope. If more than one
+    directive (on the same DOM element) requests a new scope, only one
+    new child scope is created. Since we have "normal" prototypal
+    inheritance, this is like ng-include and ng-switch, so be wary of
+    2-way data binding to parent scope primitives, and child scope
+    hiding/shadowing of parent scope properties.
+
+    </p><p>
+    scope: { ... } - the directive creates a new isolate/isolated scope.
+    It does not prototypically inherit. This is usually your best choice
+    when creating reusable components, since the directive cannot
+    accidentally read or modify the parent scope. However, such
+    directives often need access to a few parent scope properties. The
+    object hash is used to set up two-way binding (using '=') or one-way
+    binding (using '@') between the parent scope and the isolate scope.
+    There is also '&' to bind to parent scope expressions. So, these all
+    create local scope properties that are derived from the parent scope.
+
+    </p><p>
+    transclude: true - the directive creates a new "transcluded" child
+    scope, which prototypically inherits from the parent scope. So if
+    your transcluded content (i.e., the stuff that ng-transclude will be
+    replaced with) requires 2-way data binding to a primitive in the
+    parent scope, use $parent, or change the model to be an object and
+    then bind to a property of that object. This will avoid child scope
+    hiding/shadowing of parent scope properties.
+    </p>
+  </div>
+    -->
+    <div class="figure ">
         <p>
         <h4>Creates new scope and inherit <a target="blank" href="./angularJSDemos/angular-seed/app/index.html">prototypically</a></h4>
         <ul>
-          <li> <a target="_blank" href="http://jsfiddle.net/ssoward/kCGs8/">ng-repeat</a> </li>
-          <li> <a target="_blank" href="http://jsfiddle.net/ssoward/nwuqj/">ng-include</a> </li>
-          <li>ng-switch</li>
-          <li>ng-view</li>
-          <li>ng-controller</li>
-          <li>directive with scope: true</li>
-          <li>directive with transclude: true</li>
+            <li> <a target="_blank" href="http://jsfiddle.net/ssoward/kCGs8/">ng-repeat</a> </li>
+            <li> <a target="_blank" href="http://jsfiddle.net/ssoward/nwuqj/">ng-include</a> </li>
+            <li>ng-switch</li>
+            <li>ng-view</li>
+            <li>ng-controller</li>
+            <li>directive with scope: true</li>
+            <li>directive with transclude: true</li>
         </ul>
         <h4>New scope but does NOT inherit prototypically</h4>
         <ul>
-          <li>directive with scope{...}</li>
+            <li>directive with scope{...}</li>
         </ul>
         </p>
-      </div>
+    </div>
 
 
-      </section>
+</section>
 
-      <section Travis id="i" class="slide"> 
-        <h2>ng-controller</h2>
-        <p>
+<section Travis id="i" class="slide">
+    <h2>ng-controller</h2>
+    <p>
         To share data between controllers, the solution is [ironically] very
         simple. Extract the data models that need to be shared across the
         application into a service and then inject that service into the
         controllers that need it. <br/> <a target="_blank" href="http://onehungrymind.com/angularjs-sticky-notes-pt-1-architecture/">onehungrymind.com</a>
-        </p>
-        <p> Demo <a target="_blank" href="http://jsfiddle.net/ssoward/LRWEr/1/">JSFiddle</a> </p>
-      
-      </section>
-      <section Scott id="j" class="slide"> 
-      <h2>Review</h2>
-      <h4>Two-way binding</h4>
-      <ul>
+    </p>
+    <p> Demo <a target="_blank" href="http://jsfiddle.net/ssoward/LRWEr/1/">JSFiddle</a> </p>
+
+</section>
+<section id="j" class="slide">
+    <h2>Review</h2>
+    <h4>Two-way binding</h4>
+    <!-- Scott -->
+    <ul>
         <li>
-        define objects in the parent for your model, then reference a
-        property of that object in the child: parentObj.someProp
+            1. define objects in the parent for your model, then reference a
+            property of that object in the child: parentObj.someProp
         </li>
 
         <li>
-        use $parent.parentScopeProperty (not always possible, but easier
-        than 1. where possible)
+            2. use $parent.parentScopeProperty (not always possible, but easier
+            than 1. where possible)
         </li>
         <li>
-        define a function on the parent scope, and call it from the child
-        (not always possible)
+            3. define a function on the parent scope, and call it from the child
+            (not always possible)
         </li>
-      </ul>
+    </ul>
 
-      </section>
-      <section Travis Scott id="n" class="slide"> 
-        <h2>AngularJS Take Aways</h2>
-        <p>
-        <ul>
+</section>
+<section Travis Scott id="n" class="slide">
+    <h2>AngularJS Take Aways</h2>
+    <!-- Scott -->
+    <p>
+    <ul>
 
-          <li>normal prototypal scope inheritance -- ng-include, ng-switch,
-        ng-controller, directive with scope: true
+        <li>normal prototypal scope inheritance -- ng-include, ng-switch,
+            ng-controller, directive with scope: true
         </li>
         <li>normal prototypal scope inheritance with a copy/assignment --
-        ng-repeat. Each iteration of ng-repeat creates a new child scope,
-        and that new child scope always gets a new property.
+            ng-repeat. Each iteration of ng-repeat creates a new child scope,
+            and that new child scope always gets a new property.
         </li>
         <li>isolate scope -- directive with scope: {...}. This one is not
-        prototypal, but '=', '@', and '&' provide a mechanism to access
-        parent scope properties, via attributes.
+            prototypal, but '=', '@', and '&' provide a mechanism to access
+            parent scope properties, via attributes.
         </li>
         <li>transcluded scope -- directive with transclude: true. This one is
-        also normal prototypal scope inheritance, but it is also a sibling
-        of any isolate scope.
+            also normal prototypal scope inheritance, but it is also a sibling
+            of any isolate scope.
         </li>
-      </ul>
-        </p>
-      </section>
+    </ul>
+    </p>
+</section>
 
-      <section id="n1" class="slide"> 
-      <h2>Conclusion</h2>
-      </section>
-      <section id="o" class="slide"> 
-      <h2>References</h2>
-      <ul>
+<section id="n1" class="slide">
+    <h2>Conclusion</h2>
+</section>
+<section id="o" class="slide">
+    <h2>References</h2>
+    <ul>
         <li>
-        <a target="_blank" href="http://javascript.crockford.com/inheritance.html">&darr;</a> 
-        Douglas Crockford, Classical Inheritance in JavaScript
+            <a target="_blank" href="http://javascript.crockford.com/inheritance.html">&darr;</a>
+            Douglas Crockford, Classical Inheritance in JavaScript
         </li>
-        
+
         <li>
-        <a target="_blank" href="http://www.yuiblog.com/blog/2007/01/24/video-crockford-tjpl/">&darr;</a> 
-        Douglas Crockford, The JavaScript Programming Language
-        </li>
-        <li>
-        <a target="_blank" href="https://github.com/angular/angular.js/wiki/Understanding-Scopes">&darr;</a> 
-        Understanding Scopes 
+            <a target="_blank" href="http://www.yuiblog.com/blog/2007/01/24/video-crockford-tjpl/">&darr;</a>
+            Douglas Crockford, The JavaScript Programming Language
         </li>
         <li>
-        <a target="_blank" href="http://aaditmshah.github.io/why-prototypal-inheritance-matters/">&darr;</a> 
-        Aadit M Shah, Why Prototypal Inheritance Matters
+            <a target="_blank" href="https://github.com/angular/angular.js/wiki/Understanding-Scopes">&darr;</a>
+            Understanding Scopes
         </li>
         <li>
-        <a target="_blank" href="http://onehungrymind.com/angularjs-sticky-notes-pt-1-architecture/">&darr;</a> 
-        onehungrymind.com
+            <a target="_blank" href="http://aaditmshah.github.io/why-prototypal-inheritance-matters/">&darr;</a>
+            Aadit M Shah, Why Prototypal Inheritance Matters
         </li>
- 
-
-      </ul>
-        
-      </section>
-      <section id="p" class="slide"> 
-      <h3>That's fantastic!</h3>
-      <img src="nacho.jpg"/>
-      <h3>Go. Go away! Write some Angular!</h3>
-      </section>
-
-      <section id="q" class="slide"> 
-      </section>
-      <section id="r" class="slide"> 
-      </section>
-      <section id="s" class="slide"> 
-      </section>
-      <section id="t" class="slide"> 
-      </section>
-      <section id="u" class="slide"> 
-      </section>
-      <section id="v" class="slide"> 
-      </section>
+        <li>
+            <a target="_blank" href="http://onehungrymind.com/angularjs-sticky-notes-pt-1-architecture/">&darr;</a>
+            onehungrymind.com
+        </li>
 
 
+    </ul>
 
+</section>
+<section id="p" class="slide">
+    <h3>That's fantastic!</h3>
+    <img src="nacho.jpg"/>
+    <h3>Go. Go away! Write some Angular!</h3>
+</section>
 
-
-
+<section id="q" class="slide">
+</section>
+<section id="r" class="slide">
+</section>
+<section id="s" class="slide">
+</section>
+<section id="t" class="slide">
+</section>
+<section id="u" class="slide">
+</section>
+<section id="v" class="slide">
+</section>
 
 
 
@@ -381,65 +376,71 @@
 
 
 
-      <!-- deck.navigation snippet-->
-      <a target="_blank" href="#" title="Previous" class="deck-prev-link">&#8592;</a>
-      <a target="_blank" href="#" title="Next" class="deck-next-link">&#8594;</a>
-      <!-- deck.status snippet-->
-      <p class="deck-status">
-      <span class="deck-status-current"></span>/<span class="deck-status-total"></span></p>
-      <!-- deck.goto snippet-->
-      <form action="." method="get" class="goto-form">
-        <label for="goto-slide">Go to slide:</label>
-        <input id="goto-slide" type="text" name="slidenum" list="goto-datalist">
-        <datalist id="goto-datalist"></datalist>
-        <input type="submit" value="Go">
-      </form>
-      <!--deck.hash snippet-->
-      <a target="_blank" href="." title="Permalink to this slide" class="deck-permalink">#</a>
-    </div>
-    <!-- Required JS files.-->
-    <script src="js/vendor/jquery-1.8.2.min.js"></script>
-    <script src="js/vendor/coffee-script-1.4.0.min.js"></script>
-    <script src="core/deck.core.js"></script>
-    <!-- Plugin: CodeMirror (with CoffeeScript enhancements).-->
-    <script src="plugins/codemirror/codemirror.js"></script>
-    <script src="plugins/codemirror/mode/javascript/javascript.js"></script>
-    <script src="plugins/codemirror/mode/coffeescript/coffeescript.js"></script>
-    <script src="plugins/codemirror/deck.codemirror.js"></script>
-    <!-- Extension JS files. Add or remove as needed.-->
-    <script src="extensions/hash/deck.hash.js"></script>
-    <script src="extensions/menu/deck.menu.js"></script>
-    <script src="extensions/goto/deck.goto.js"></script>
-    <script src="extensions/status/deck.status.js"></script>
-    <script src="extensions/navigation/deck.navigation.js"></script>
-    <script src="extensions/scale/deck.scale.js"></script>
-    <script src="extensions/clone/deck.clone.js"></script>
-    <script src="extensions/presenterview/deck.presenterview.js"></script>
-    <script src="extensions/hash/deck.hash.js"></script>
-    <!--
-    <script src="extensions/notes/deck.notes.js"></script>
-    <script src="extensions/notes/deck.scottsNotes.js"></script>
-    -->
-    <!-- Initialize the deck.-->
-    <script>$(function() {
-      $.deck('.slide', {
+
+
+
+
+
+
+<!-- deck.navigation snippet-->
+<a target="_blank" href="#" title="Previous" class="deck-prev-link">&#8592;</a>
+<a target="_blank" href="#" title="Next" class="deck-next-link">&#8594;</a>
+<!-- deck.status snippet-->
+<p class="deck-status">
+    <span class="deck-status-current"></span>/<span class="deck-status-total"></span></p>
+<!-- deck.goto snippet-->
+<form action="." method="get" class="goto-form">
+    <label for="goto-slide">Go to slide:</label>
+    <input id="goto-slide" type="text" name="slidenum" list="goto-datalist">
+    <datalist id="goto-datalist"></datalist>
+    <input type="submit" value="Go">
+</form>
+<!--deck.hash snippet-->
+<a target="_blank" href="." title="Permalink to this slide" class="deck-permalink">#</a>
+</div>
+<!-- Required JS files.-->
+<script src="js/vendor/jquery-1.8.2.min.js"></script>
+<script src="js/vendor/coffee-script-1.4.0.min.js"></script>
+<script src="core/deck.core.js"></script>
+<!-- Plugin: CodeMirror (with CoffeeScript enhancements).-->
+<script src="plugins/codemirror/codemirror.js"></script>
+<script src="plugins/codemirror/mode/javascript/javascript.js"></script>
+<script src="plugins/codemirror/mode/coffeescript/coffeescript.js"></script>
+<script src="plugins/codemirror/deck.codemirror.js"></script>
+<!-- Extension JS files. Add or remove as needed.-->
+<script src="extensions/hash/deck.hash.js"></script>
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+<script src="extensions/clone/deck.clone.js"></script>
+<script src="extensions/presenterview/deck.presenterview.js"></script>
+<script src="extensions/hash/deck.hash.js"></script>
+<!--
+<script src="extensions/notes/deck.notes.js"></script>
+<script src="extensions/notes/deck.scottsNotes.js"></script>
+-->
+<!-- Initialize the deck.-->
+<script>$(function() {
+    $.deck('.slide', {
         codemirror: {
-          lineNumbers: true,
-          theme: "elegant",
-          indentUnit: 2,
-          indentWithTabs: false,
-          runnable: false
+            lineNumbers: true,
+            theme: "elegant",
+            indentUnit: 2,
+            indentWithTabs: false,
+            runnable: false
         }
-      });
     });
-  </script>
-  <script>
+});
+</script>
+<script>
     $(".popquiz").mouseover(function(){
-      $(this).css("color", "white");
+        $(this).css("color", "white");
     });
     $(".popquiz").mouseout(function(){
-      $(this).css("color", "#111");
+        $(this).css("color", "#111");
     });
-  </script>
+</script>
 </body>
-  </html>
+</html>
