@@ -326,9 +326,9 @@
 <section Travis id="i" class="slide">
     <h2>ng-controller</h2>
     <p>
-        To share data between controllers, the solution is [ironically] very
+        To share data between controllers, the solution is very
         simple. Extract the data models that need to be shared across the
-        application into a service and then inject that service into the
+        application into a (client) Service and then inject that service into the
         controllers that need it. <br/> <a target="_blank" href="http://onehungrymind.com/angularjs-sticky-notes-pt-1-architecture/">onehungrymind.com</a>
     </p>
     <p> Demo <a target="_blank" href="http://jsfiddle.net/ssoward/LRWEr/1/">JSFiddle</a> </p>
@@ -372,10 +372,10 @@
             prototypal, but '=', '@', and '&' provide a mechanism to access
             parent scope properties, via attributes.
         </li>
-        <li>transcluded scope -- directive with transclude: true. This one is
-            also normal prototypal scope inheritance, but it is also a sibling
-            of any isolate scope.
-        </li>
+        <!--<li>transcluded scope -- directive with transclude: true. This one is-->
+            <!--also normal prototypal scope inheritance, but it is also a sibling-->
+            <!--of any isolate scope.-->
+        <!--</li>-->
     </ul>
     </p>
 </section>
