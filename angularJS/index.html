@@ -179,6 +179,7 @@
         Bi-directional linking can be maintained by sticking to the rule:
         <a target="_blank" href="http://www.youtube.com/watch?v=ZhfUv0spHCY&feature=youtu.be&t=30m">always having a '.'</a> in your ng-models.
         <!-- Scott
+           <br/>
           Prototypal Inheritance<br/>
           Scope inheritance is normally straightforward, and you often don't
           even need to know it is happening... until you try 2-way data
@@ -200,7 +201,10 @@
     <h2>AngularJS Scope</h2>
     <!-- Scott
     <br/>For the sake or this presentation:
-    <br/>It is just an OBJECT and adheres to the prototypical JS inheritance:  inherits properties from its parent scope
+    <br/>It is just an <b>OBJECT</b> and adheres to the prototypical JS inheritance:  inherits properties from its parent scope
+    <br/><br/>During the template linking phase the directives set up $watch expressions on the scope. The $watch allows the directives to be notified of property changes, which allows the directive to render the updated value to the DOM.
+    <br/>Both controllers and directives have reference to the scope, but not to each other. This arrangement isolates the controller from the directive as well as from DOM. This is an important point since it makes the controllers view agnostic, which greatly improves the testing story of the applications.
+
     -->
     <div class="figure ">
         <p>
@@ -214,12 +218,13 @@
                  <li>Provide context against which expressions are evaluated</li>
                  <li>It is the glue between application controller and the view</li>
              </ul>
+        <a href="http://docs.angularjs.org/guide/scope">docs</a>
         </p>
     </div>
 
 
 </section>
-<section Scott id="fa" class="slide">
+<section id="fa" class="slide">
     <h2>Prototypal Inheritance in AngularJS</h2>
     <!-- Scott
     <br/>scope is an object that refers to the application model. It is an execution context for expressions. Scopes are arranged in hierarchical structure which mimic the DOM structure of the application. Scopes can watch expressions and propagate events.
@@ -380,6 +385,10 @@
 <section id="o" class="slide">
     <h2>References</h2>
     <ul>
+        <li>
+            <a target="_blank" href="http://docs.angularjs.org/guide/scope">&darr;</a>
+            AngularJS Docs
+        </li>
         <li>
             <a target="_blank" href="http://javascript.crockford.com/inheritance.html">&darr;</a>
             Douglas Crockford, Classical Inheritance in JavaScript
