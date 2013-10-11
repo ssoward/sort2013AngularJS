@@ -15,14 +15,13 @@ angular.module('myApp.directives', []).
          transclude: false, // taking a portion of a html and embedding it inside a directive
 
          //WHICH SCOPE TO USE
-         //scope:false,                 // DEFAULT: does not inherit prototypically
-         //scope:true,                  // inherits prototypically
-         //scope:'isolate',             // inherits prototypically
-         //scope:{ title: '=myTitle' }, // set up two-way binding (using '=')
+         // scope:false,                 // DEFAULT: does not inherit prototypically
+         // scope:true,                  // inherits prototypically
+         // scope:'isolate',             // inherits prototypically
 
-         //update index with {{title}}
-         //scope:{ title: '@myTitle' }, // one-way binding (using '@')
-         //scope:{ title: '&myTitle' }, // execute an expression in the context of the parent scope
+         // scope:{ title: '=myTitle' }, // set up two-way binding (using '=')
+         // scope:{ title: '@myTitle' }, // one-way binding (using '@') (update index with {{title}})
+         // scope:{ title: '&myTitle' }, // execute an expression in the context of the parent scope
 
          template:'<div class="directive">' +
                  '<input ng-model="title"/><span>{{title}}</span>' +
