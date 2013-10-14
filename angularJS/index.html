@@ -34,12 +34,11 @@
 </section>
 
 <section id="a1" class="slide">
-    <h2>Travis to rework all slides up to angularJS Scope and introduce
-        AngualarJS scope Key Topics</h2>
+    <h2>Leave before you waste any time</h2>
     <div class="figure ">
         <!-- Travis: Key Topics:  -->
         <ul>
-            <li>JS Origin</li>
+            <li>Intro</li>
             <li>Prototypal Inheritance</li>
             <li>AngularJS Scope</li>
         </ul>
@@ -48,68 +47,35 @@
 
 </section>
 
-
 <section id="a1a" class="slide">
-    <h2>Brendan Eich (Netscape 1995)</h2>
-    <div class="figure ">
-        <ul>
-            <li>LiveScript-->JavaScript (ECMAScript)</li>
-            <li><ul>
-                <li>Java (needed to look like Java)</li>
-                <li>Scheme (took features)</li>
-                <li>Self (took features)</li>
-            </ul></li>
-        </ul>
+    <br/>
+    <blockquote><p>year 2013: Haskell people are still writing monad tutorials, JavaScript people are still trying to
+        explain inheritance.</p>
         <!--
-        Current Screen<br/>
-          Travis: Brendan Eich
-          <br/>
-          You'll have the
-          tendency to write javascript based on the language you know best.
-          However, inheritance models used my most other languages are not
-          the same as prototypal inheritance. By deeply understanding
-          prototypal inheritance you'll be able to leverage the full power
-          javascript. It's important to write idiomatic javascript.
+        <ul>
+            <li>True for Haskell, true for javascript.</li>
+            <li>Javascript inheritance can be difficult to grasp, especially when we come to javascript from
+                Java, Ruby, or C# - languages that have built-in support for OOP.
+            </li>
+        </ul>
+
         -->
-
-    </div>
-
+        <p>— Vyacheslav Egorov (@mraleph)&nbsp;<a rel="nofollow"
+                                                  href="https://twitter.com/mraleph/status/322843655381590016">April 12,
+            2013</a></p></blockquote>
 </section>
 
-<section id="a2" class="slide">
-    <h2>Classical vs Prototypal Inheritance</h2>
-    <div class="figure ">
-        <!-- Travis -->
-        <table class="tableOW">
-            <tbody>
-            <tr>
-                <th>Classical Inheritance (Java)</th>
-                <th>Prototypal Inheritance (JavaScript)</th>
-            </tr>
-            <tr>
-                <td>Class and instances of class: Classes are immutable. You can't modify or add new methods to them at runtime.</td>
-                <td>Prototypes are flexible.  They may be either mutable or immutable.</td>
-            </tr>
-            <tr>
-                <td>Classes may or may not support multiple inheritance.</td>
-                <td>Objects can inherit from multiple prototypes.</td>
-            </tr>
-            <tr>
-                <td>It's verbose and complicated.  You have abstract classes, final classes, interfaces, etc.</td>
-                <td>It's simple.  You only have objects and extending objects is the only operation required.</td>
-            </tr>
-            </tbody>
-        </table>
-
-    </div>
-
-    <a href="http://aaditmshah.github.io/why-prototypal-inheritance-matters/">Aadit M Shah</a>
+<section id="a1b" class="slide">
+    <h2>Complex</h2>
+    <!--
+    This graph depicts the inheritance graph of two simple objects b1 and b2 that try and share some
+    -->
+    <img src="jscomplex.png"/>
 </section>
-
-
 
 <section id="c" class="slide">
-    <h2>Classical vs Prototypal Inheritance cont.</h2>
+    <h2>Classical vs Prototypal Inheritance</h2>
+
     <div class="figure ">
         <!-- Travis -->
         <p>
@@ -120,20 +86,17 @@
 
 </section>
 
+
+
 <section id="b" class="slide">
-    <!-- Travis -->
-    <h2>Prototypal Inheritance: 6 year old</h2>
-    <p>
-        <img height="350px" src="piggyback.jpg"/>
-    <div class="notes">
-        Prototypal inheritance is like a son carrying his father on his back
-        everywhere he goes. If someone asks the son, "what color are your
-        shoes?" He would respond with his shoe color, unless he is barefoot,
-        then he'd respond with his dads shoe color.
-    </div>
-    </p>
-    <p>With Classical you'd only have a template person (interface or abstract class) and not a real dad</p>
-    <a target="_blank" href="http://goo.gl/E3qWso">stackoverflow</a>
+    <!-- Travis
+     -- add slide about prototypal chain --
+     Don't try to force prototypal on classical inheritance-->
+    <h2>Salient points</h2>
+    <ul>
+        <li>Objects all the way down</li>
+        <li>Demo</li>
+    </ul>
 
 </section>
 
