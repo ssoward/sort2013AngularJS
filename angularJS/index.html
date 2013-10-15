@@ -100,36 +100,6 @@
 
 </section>
 
-<section id="d" class="slide">
-    <!-- Travis -->
-    <h2>Prototypal Inheritance</h2>
-    <p>
-      <pre>
-      var scott = {
-        teeth: 42,
-        stitches: 10
-      };
-
-      // create two new child objects
-      var noah = Object.create(scott);
-
-      noah.stitches = 22;
-
-      // at anytime parent can get a new property 
-      // and it is reflected in the children
-      scott.brokenbones = 2;
-
-      console.log(noah.brokenbones); //==> 2
-
-      // Pop Quiz:
-      console.log(noah.teeth);// ==><span class="popquiz">42</span>
-      scott.teeth = 5;
-      console.log(noah.teeth);// ==><span class="popquiz">5</span>
-      noah.teeth = 100;
-      console.log(noah.teeth);// ==><span class="popquiz">100</span>
-    </pre>
-    </p>
-</section>
 <section id="e" class="slide">
     <h2>Prototypal Inheritance</h2>
     <p>
