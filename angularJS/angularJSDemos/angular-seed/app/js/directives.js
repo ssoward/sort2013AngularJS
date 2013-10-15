@@ -7,22 +7,21 @@ angular.module('myApp.directives', []).
      console.log('creating');
      return {
          //Attribues:
-         restrict: 'EACM', //element, attribute, class, comments
+         restrict: 'EACM',  //element, attribute, class, comments
 
-         replace: true, //true: the template will replace the current element.
-         //false: the template will replace the contents of the current element
+         replace: true,     //true: the template will replace the current element.
+                            //false: the template will replace the contents of the current element
 
          transclude: false, // taking a portion of a html and embedding it inside a directive
 
          //WHICH SCOPE TO USE
-         //scope:false,                   // DEFAULT: does not inherit prototypically
-         //scope:true,                    // inherits prototypically
-         //scope:'isolate',               // inherits prototypically
-         //scope:{ title: '=myTitle' },   // set up two-way binding (using '=')
+         // scope:false,                 // DEFAULT: does not inherit prototypically
+         // scope:true,                  // inherits prototypically
+         // scope:'isolate',             // inherits prototypically
 
-         //update index with {{title}}
-         //scope:{ title: '@myTitle' }, // one-way binding (using '@')
-         //scope:{ title: '&myTitle' },   // execute an expression in the context of the parent scope
+         // scope:{ title: '=myTitle' }, // set up two-way binding (using '=')
+         // scope:{ title: '@myTitle' }, // one-way binding (using '@') (update index with {{title}})
+         // scope:{ title: '&myTitle' }, // execute an expression in the context of the parent scope
 
          template:'<div class="directive">' +
                  '<input ng-model="title"/><span>{{title}}</span>' +

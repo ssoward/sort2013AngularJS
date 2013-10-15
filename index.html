@@ -197,6 +197,14 @@
     </p>
 
 </section>
+<section Scott id="fa" class="slide">
+    <h2>AngularJS</h2>
+        <!-- Scott
+        <br/>Controller
+
+        -->
+    <img src="scopeGlue.png"/>
+</section>
 <section Scott id="f" class="slide">
     <h2>AngularJS Scope</h2>
     <!-- Scott
@@ -233,10 +241,9 @@
         <li>$scope in AngularJS is an Object that inherits prototypically</li>
     </ul>
 </section>
-<section id="fa" class="slide">
+<section id="faa" class="slide">
     <h2>Prototypal Inheritance in AngularJS</h2>
     <!-- Scott
-    <br/>scope is an object that refers to the application model. It is an execution context for expressions. Scopes are arranged in hierarchical structure which mimic the DOM structure of the application. Scopes can watch expressions and propagate events.
     <br/><br/>Directives are a way to teach HTML new tricks. During DOM compilation directives are matched against the HTML and executed. This allows directives to register behavior, or transform the DOM.
     -->
     <div class="figure ">
@@ -360,15 +367,21 @@
 
 </section>
 <section Travis Scott id="n" class="slide">
-    <h2>AngularJS Take Aways</h2>
+    <h2>So What?</h2>
     <!-- Scott -->
     <p>
     <ul>
 
-        <li>normal prototypal scope inheritance -- ng-include, ng-switch,
+        <li>
+            Understanding prototypal inheritance will help as you develop AngularJS apps.
+        </li>
+        <li>
+            $scope is a JS object and operates consistent with prototypal inheritance
+        </li>
+        <li>normal prototypal inheritance -- ng-include, ng-switch,
             ng-controller, directive with scope: true
         </li>
-        <li>normal prototypal scope inheritance with a copy/assignment --
+        <li>normal prototypal inheritance with a copy/assignment --
             ng-repeat. Each iteration of ng-repeat creates a new child scope,
             and that new child scope always gets a new property.
         </li>
@@ -384,9 +397,9 @@
     </p>
 </section>
 
-<section id="n1" class="slide">
-    <h2>Conclusion</h2>
-</section>
+<!--<section id="n1" class="slide">-->
+    <!--<h2>Conclusion</h2>-->
+<!--</section>-->
 <section id="o" class="slide">
     <h2>References</h2>
     <ul>
