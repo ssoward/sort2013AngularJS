@@ -36,7 +36,8 @@
 <section id="a1" class="slide">
     <h2>Leave before you waste any time</h2>
     <div class="figure ">
-        <!-- Travis: Key Topics:  -->
+        <!-- Intro. Before we get to AngularJS scope, we think you need to understand how JS
+          inheritance works to avoid some of the gotchas you might encounter when you dig into AJS.-->
         <ul>
             <li>Intro</li>
             <li>Prototypal Inheritance</li>
@@ -53,10 +54,10 @@
         explain inheritance.</p>
         <!--
         <ul>
-            <li>True for Haskell, true for javascript.</li>
-            <li>Javascript inheritance can be difficult to grasp, especially when we come to javascript from
-                Java, Ruby, or C# - languages that have built-in support for OOP.
-            </li>
+            <li>True for Haskell.</li>
+            <li>Why should JS inheritance be difficult to grasp?</li>
+            <li>Most programmers, until recently, have come to javascript from Java, C#, Ruby, etc, and so we
+            already have been exposed to classical inheritance</li>
         </ul>
 
         -->
@@ -68,14 +69,18 @@
 <section id="a1b" class="slide">
     <h2>Complex</h2>
     <!--
-    This graph depicts the inheritance graph of two simple objects b1 and b2 that try and share some
+    This pic depicts the inheritance graph of two simple objects b1 and b2 that each have the same parent.
+    It uses Javascript "constructors", and other mechanisms to mimic classical inheritance.
     -->
     <img src="jscomplex.png"/>
 </section>
 
 <section id="c" class="slide">
     <h2>Classical vs Prototypal Inheritance</h2>
-
+    <!-- However, there is a simpler way we can think about this by forgetting classical and embracing prototypal
+         Note, we aren't *really* trying to convince you that overlaying classical inheritance onto JS is bad, only that it's more complex,
+         and something you don't need to understand to get AJS.
+    -->
     <div class="figure ">
         <!-- Travis -->
         <p>
@@ -86,50 +91,16 @@
 
 </section>
 
-
-
 <section id="b" class="slide">
-    <!-- Travis
-     -- add slide about prototypal chain --
-     Don't try to force prototypal on classical inheritance-->
-    <h2>Salient points</h2>
+    <h2>High notes:</h2>
     <ul>
-        <li>Objects all the way down</li>
-        <li>Demo</li>
+        <li>Objects are just key/value pairs</li>
+        <li>Each object has a link (internally) that links to another object.</li>
+        <li>It's <strike>turtles</strike> objects all the way down</li>
+        <li>Think of a chain</li>
     </ul>
-
 </section>
 
-<section id="d" class="slide">
-    <!-- Travis -->
-    <h2>Prototypal Inheritance</h2>
-    <p>
-      <pre>
-      var scott = {
-        teeth: 42,
-        stitches: 10
-      };
-
-      // create two new child objects
-      var noah = Object.create(scott);
-
-      noah.stitches = 22;
-
-      // at anytime parent can get a new property 
-      // and it is reflected in the children
-      scott.brokenbones = 2;
-
-      console.log(noah.brokenbones); //==> 2
-
-      // Pop Quiz:
-      console.log(noah.teeth);// ==><span class="popquiz">42</span>
-      scott.teeth = 5;
-      console.log(noah.teeth);// ==><span class="popquiz">5</span>
-      noah.teeth = 100;
-      console.log(noah.teeth);// ==><span class="popquiz">100</span>
-    </pre>
-    </p>
-</section>
 <section id="e" class="slide">
     <h2>Prototypal Inheritance</h2>
     <p>
