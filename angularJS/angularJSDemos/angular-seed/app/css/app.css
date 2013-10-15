@@ -1,0 +1,49 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+body {
+  padding-left: 40px;
+  padding-bottom: 10px;
+  border: 1px solid;
+  border-radius: 15px;
+  width: 80%;
+  padding-right: 40px;
+  font-family: fantasy;
+}
+.directive{
+  border: 1px solid blue;
+  font-size: 35px;
+  border-radius: 15px;
+  height: 50px;
+  padding: 14px;
+}
+span{
+  padding-left: 40px;
+}
