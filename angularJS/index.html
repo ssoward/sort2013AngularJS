@@ -148,8 +148,8 @@ Object.create creates a new object whose prototype points to whatever is passed 
     <br/>For the sake or this presentation:
     <br/>It is just an <b>OBJECT</b> and adheres to the prototypical JS inheritance:  inherits properties from its parent scope
     <br/><br/>During the template linking phase the directives set up $watch expressions on the scope. The $watch allows the directives to be notified of property changes, which allows the directive to render the updated value to the DOM.
-    <br/>Both controllers and directives have reference to the scope, but not to each other. This arrangement isolates the controller from the directive as well as from DOM. This is an important point since it makes the controllers view agnostic, which greatly improves the testing story of the applications.
-    <br/>
+    <br/><br/>Both controllers and directives have reference to the scope, but not to each other. This arrangement isolates the controller from the directive as well as from DOM. This is an important point since it makes the controllers view agnostic, which greatly improves the testing story of the applications.
+    <br/><br/>
     <pre>
       $apply applies the results of the function passed in to the bound view to update the UI
       $eval attempts to evaluate the string on the scope
@@ -280,8 +280,9 @@ Object.create creates a new object whose prototype points to whatever is passed 
         -->
     <a target="blank" href="./angularJSDemos/angular-seed/app/index.html">Directives</a>
 </section>
-<section Travis id="i" class="slide">
+<section id="i" class="slide">
     <h2>ng-controller</h2>
+    <!-- Scott -->
     <p>
         To share data between controllers, the solution is very
         simple. Extract the data models that need to be shared across the
@@ -312,7 +313,7 @@ Object.create creates a new object whose prototype points to whatever is passed 
     </ul>
 
 </section>
-<section Travis Scott id="n" class="slide">
+<section id="n" class="slide">
     <h2>So What?</h2>
     <!-- Scott -->
     <p>
@@ -343,9 +344,12 @@ Object.create creates a new object whose prototype points to whatever is passed 
     </p>
 </section>
 
-<!--<section id="n1" class="slide">-->
-    <!--<h2>Conclusion</h2>-->
-<!--</section>-->
+<section id="p" class="slide">
+    <h3>That's fantastic!</h3>
+    <img src="./nacho.jpg"/>
+    <h3>Go. Go away! Write some Angular!</h3>
+</section>
+
 <section id="o" class="slide">
     <h2>References</h2>
     <ul>
@@ -379,11 +383,7 @@ Object.create creates a new object whose prototype points to whatever is passed 
     </ul>
 
 </section>
-<section id="p" class="slide">
-    <h3>That's fantastic!</h3>
-    <img src="./nacho.jpg"/>
-    <h3>Go. Go away! Write some Angular!</h3>
-</section>
+
 
 <section id="q" class="slide">
 </section>
