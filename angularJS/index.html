@@ -67,7 +67,7 @@
 </section>
 
 <section id="a1b" class="slide">
-    <h2>Complex</h2>
+    <h2>Classical Inheritance in JS</h2>
     <!--
     This pic depicts the inheritance graph of two simple objects b1 and b2 that each have the same parent.
     It uses Javascript "constructors", and other mechanisms to mimic classical inheritance.
@@ -84,7 +84,7 @@
     <div class="figure ">
         <!-- Travis -->
         <p>
-            ...I now see my early attempts to support the classical model in JavaScript as a mistake.
+            ...I now see my early attempts to support the classical (inheritance) model in JavaScript as a mistake.
         </p>
         <a target="_blank" href="http://javascript.crockford.com/inheritance.html">Douglas Crockford</a>
     </div>
@@ -92,15 +92,18 @@
 </section>
 
 <section id="b" class="slide">
-    <h2>High notes:</h2>
+    <h2>Prototypal inheritance:</h2>
     <ul>
         <li>Objects are just key/value pairs</li>
-        <li>Each object has a link (internally) that links to another object.</li>
+        <li>Objects have a link pointing to another object. (child-->parent)</li>
         <li>It's <strike>turtles</strike> objects all the way down</li>
         <li>Think of a chain</li>
     </ul>
 </section>
 
+<!-
+Object.create creates a new object whose prototype points to whatever is passed in here.
+-->
 <section id="e" class="slide">
     <h2>Prototypal Inheritance</h2>
     <p>
