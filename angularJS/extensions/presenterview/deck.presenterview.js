@@ -8,10 +8,10 @@ if (window.$ !== undefined) {
         presenterView.writeAllCssPathsToLocalStorage();
 
         // open popup, 3 args: link to open, windows name, width + height
-	var presenter = window.open(presenterView.getLinkToPresenterView(),
-                                    'deck.js - presenterView',
-                                    'width=' + screen.width + ', height=' + screen.height);
-    });
+//	var presenter = window.open(presenterView.getLinkToPresenterView(),
+//                                    'deck.js - presenterView',
+//                                    'width=' + screen.width + ', height=' + screen.height);
+//    });
 
     /**
     * Note: This event is also triggered when the presentation is loaded!
